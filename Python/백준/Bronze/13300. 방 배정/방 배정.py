@@ -7,5 +7,5 @@ for _ in range(N) :
 ans = 0
 for grade in total_student:
     for s in grade:
-        ans += (s+1) // 2
+        ans += (s+K-1) // K # K를 생각해야..
 print(ans)
