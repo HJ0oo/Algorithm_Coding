@@ -1,23 +1,11 @@
-import pprint
-def clean(i,j,direction):
+def clean(i,j,direction): # 지금 있는 위치 i j, 지금 direction
     global arr
-    global real_cnt
-    
-    # print(i,j,direction)
-    # 지금 있는 위치 i j, 지금 direction
-    # 8 5 0 에서 잘못돌아간것
-    # 8 6 1 이 되어야 함
-    if not(0<=i<N) or not(0<=j<M) or arr[i][j]==1 :
-        return
-
     arr[i][j] = -1 # 청소한 칸
-    real_cnt += 1
 
     find_next_direction = (direction + 3) % 4 # 반시계 회전
-    # print("next_d",find_next_direction)
+
     for _ in range(4) :
         if arr[i+direction_list[find_next_direction][0]][j+direction_list[find_next_direction][1]] == 0 :
-            # print("direc",find_next_direction)
             direction = find_next_direction
             i += direction_list[find_next_direction][0]
             j += direction_list[find_next_direction][1]
@@ -28,18 +16,12 @@ def clean(i,j,direction):
     else:
         # 바라보는 방향을 유지한 채로 한 칸 "후진할 수 있다면"
         # 한 칸 후진하고 1번으로 돌아간다.
-        # print("last",direction)
         i -= direction_list[direction][0]
         j -= direction_list[direction][1]
-        # print("i,j",i,j,direction)
-        # pprint.pprint(arr)
         if 0<=i<N and 0<=j<M and arr[i][j]!=1 :
             clean(i,j,direction)
-        else :
-            # 작동 끝
+        else : # 작동 끝
             return
-
-
     return
 
 north = 0   # (-1,0)
@@ -61,11 +43,9 @@ for i in range(N):
         if arr[i][j] == 1 : first_one_cnt += 1
 clean(r,c,direction)
 
-# pprint.pprint(arr)
+
 cnt = 0
 for i in range(N):
     for j in range(M):
         if arr[i][j] == 0 : cnt += 1
 print(N*M - first_one_cnt - cnt)
-# print(real_cnt)
-# print("끝")
