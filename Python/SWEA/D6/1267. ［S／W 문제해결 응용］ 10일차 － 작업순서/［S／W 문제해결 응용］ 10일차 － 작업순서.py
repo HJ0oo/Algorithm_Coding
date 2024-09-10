@@ -38,3 +38,4 @@ for tc in range(1, T + 1):
                 q.append(i)
                 visited[i] = visited[t] + 1
     print()
+    
