@@ -1,5 +1,5 @@
 #include <iostream>
-#include <string>
+#include <string> // 문자열 숫자 변환
 #include <unordered_set>
 using namespace std;
 
@@ -7,7 +7,7 @@ int main() {
 	int T;
 	cin >> T;
 
-	for (int tc = 1; tc <= T; ++tc) {
+	for (int tc = 1; tc <= T; tc++) {
 		int N;
 		cin >> N;
 
@@ -22,7 +22,7 @@ int main() {
 				num_set.erase(c);
 			}
 
-			++cnt;
+			cnt++;
 		}
 
 		cout << "#" << tc << " " << N * (cnt - 1) << endl;
