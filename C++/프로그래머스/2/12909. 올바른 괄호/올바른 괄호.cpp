@@ -1,6 +1,5 @@
 #include <string>
 #include <iostream>
-// #include <deque>
 #include <stack>
 /* 
 // push() - 데이터를 스택에 추가
@@ -18,7 +17,6 @@ bool solution(string s)
 {
     stack <char> my_stack;
     
-    
     for (char ch : s){
         if (ch == ')'){
             if (my_stack.empty()) {
@@ -35,6 +33,7 @@ bool solution(string s)
         }
     }
     
+    
     if (my_stack.empty()) {
         return true;
     }
@@ -42,41 +41,5 @@ bool solution(string s)
         return false;
     }
     
-    
-//         if (my_stack.empty()) {
-//             my_stack.push(ch);
-//         }
-//         else {
-//             char pop_ch = my_stack.top();
-//             my_stack.pop();
-//             if ( pop_ch == ')' || pop_ch == ch ){
-//                 return false;
-//             }
-//         }
-//     }
-//     return true;
-    
-    
-//     ///////////////////////////////////////
-//     char pop_ch = my_stack.top();
-//     my_stack.pop();
-//     ///////////////////////////////////////
-//     if ( pop_ch == '(' ) {
-//         return false;
-//     }
-    
-//     char temp;
-//     for (int i = 1; i < my_stack.size(); i++){ // 하나 이미 뽑았음 i=1부터 시작
-//         temp = my_stack.top();
-//         my_stack.pop();
-//         if (temp == pop_ch){
-//             return false;
-//         }
-//         else {
-//             pop_ch = temp;
-//         }
-        
-//     }
 
-//     return true;
 }
