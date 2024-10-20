@@ -3,10 +3,28 @@
 
 using namespace std;
 
+
+string decimalToBinary(int num) {
+    string binaryString = "";
+    for (int i = num; i > 0; i = i / 2) {
+        binaryString.push_back((i % 2) + '0');
+    }
+    return binaryString;
+}
+
+string toBinary(int num) {
+    string s = "";
+    // 숫자가 0이 될 때까지 나누면서 이진수로 변환
+    for (int i = num; i > 0; i = i / 2) {
+        s = to_string(i % 2) + s;  // 앞쪽에 추가
+    }
+    return s;
+}
+
+
 string to_bin(int n){
     string binary = "";
-    // n이 0이 될 때까지 나누며 이진수로 변환
-    while (n > 0) {
+    while (n > 0) { // n이 0이 될 때까지 나누며 이진수로 변환
         binary = to_string(n % 2) + binary;  // 나머지를 앞쪽에 추가
         n /= 2;  // 2로 나눔
     }
