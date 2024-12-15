@@ -1,13 +1,17 @@
-#include <cstdio>
+#include <iostream>
 #include <string>
+using namespace std;
+
+/*
+1~20까지 비트라고 생각하고 비트마스킹
+19 18 ... 2 1 0
+*/
 
 int m;
 int S = 0;
-
+int x;
+char cmd[10]; // 명령어를 저장할 배열
 int main() {
-    char cmd[10];
-    int x;
-
     scanf("%d", &m); // 명령의 수 입력
     while (m--) {
         scanf("%s", cmd); // 명령 입력
